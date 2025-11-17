@@ -12,10 +12,17 @@ const sections = [
 export default function Navbar() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [progress, setProgress] = useState(0)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10)
+    const onScroll = () => {
+      setScrolled(window.scrollY > 10)
+      const h = document.body.scrollHeight - window.innerHeight
+      const p = h > 0 ? (window.scrollY / h) * 100 : 0
+      setProgress(p)
+    }
     window.addEventListener('scroll', onScroll)
+    onScroll()
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
@@ -41,7 +48,7 @@ export default function Navbar() {
               <button
                 key={s.id}
                 onClick={() => handleNav(s.id)}
-                className="text-sm text-white/80 hover:text-white transition-colors"
+                className="text-sm text-white/80 hover:text-white transition-colors relative after:absolute after:-bottom-2 after:left-0 after:h-px after:w-0 after:bg-emerald-400 after:transition-all hover:after:w-full"
               >
                 {s.label}
               </button>
@@ -80,6 +87,9 @@ export default function Navbar() {
             </div>
           </div>
         )}
+      </div>
+      <div className="h-1 w-full bg-white/5">
+        <div className="h-1 bg-emerald-500 transition-[width] duration-200" style={{ width: `${progress}%` }} />
       </div>
     </header>
   )

@@ -27,8 +27,9 @@ function Footer() {
   }
 
   return (
-    <footer className="bg-[#07090B] border-t border-white/10">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 grid gap-10 md:grid-cols-3">
+    <footer className="bg-[#07090B] border-t border-white/10 relative">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(16,185,129,0.06),transparent_70%)]" />
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 grid gap-10 md:grid-cols-3">
         <div className="space-y-3">
           <div className="flex items-center gap-3">
             <div className="h-7 w-7 rounded-md bg-emerald-400/20 ring-1 ring-emerald-400/50" />
@@ -53,7 +54,7 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className="border-t border-white/10">
+      <div className="border-t border-white/10 relative">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-white/50 text-xs">© {year} turnitAI. All rights reserved.</p>
           <div className="flex items-center gap-4 text-white/50 text-xs">

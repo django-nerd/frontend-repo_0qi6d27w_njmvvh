@@ -1,4 +1,5 @@
 import { Sparkles, FileCog, DatabaseZap } from 'lucide-react'
+import Reveal from './Reveal'
 
 const products = [
   {
@@ -24,26 +25,29 @@ const products = [
 export default function Products() {
   return (
     <section id="products" className="relative bg-[#07090B] text-white py-20 sm:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(16,185,129,0.08),transparent_70%)]" />
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
           <p className="text-xs text-emerald-300/80">AI Tools</p>
           <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">Our Products</h2>
           <p className="mt-3 text-white/70">Proprietary AI tools to accelerate your operations.</p>
         </div>
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {products.map(({ icon: Icon, title, desc, tags }) => (
-            <div key={title} className="group rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-white/[0.02] p-6 hover:border-emerald-400/40 transition-colors">
-              <div className="h-10 w-10 rounded-lg bg-emerald-400/20 text-emerald-300 flex items-center justify-center ring-1 ring-emerald-400/40 mb-4">
-                <Icon size={20} />
+          {products.map(({ icon: Icon, title, desc, tags }, i) => (
+            <Reveal key={title} delay={i * 0.05}>
+              <div className="group rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-white/[0.02] p-6 hover:border-emerald-400/40 transition-colors">
+                <div className="h-10 w-10 rounded-lg bg-emerald-400/20 text-emerald-300 flex items-center justify-center ring-1 ring-emerald-400/40 mb-4">
+                  <Icon size={20} />
+                </div>
+                <h3 className="text-lg font-medium">{title}</h3>
+                <p className="mt-2 text-sm text-white/70">{desc}</p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {tags.map((t) => (
+                    <span key={t} className="text-[10px] uppercase tracking-wide text-white/60 rounded-full border border-white/10 px-2 py-1">{t}</span>
+                  ))}
+                </div>
               </div>
-              <h3 className="text-lg font-medium">{title}</h3>
-              <p className="mt-2 text-sm text-white/70">{desc}</p>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {tags.map((t) => (
-                  <span key={t} className="text-[10px] uppercase tracking-wide text-white/60 rounded-full border border-white/10 px-2 py-1">{t}</span>
-                ))}
-              </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

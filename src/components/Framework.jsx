@@ -1,3 +1,5 @@
+import Reveal from './Reveal'
+
 export default function Framework() {
   const steps = [
     {
@@ -34,19 +36,22 @@ export default function Framework() {
 
   return (
     <section id="framework" className="relative bg-[#0A0D10] text-white py-20 sm:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(16,185,129,0.07),transparent_70%)]" />
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
           <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">Framework</h2>
           <p className="mt-3 text-white/70">FOCUS: Frame · Outline · Construct · Unite · Scale</p>
         </div>
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
-          {steps.map((s) => (
-            <div key={s.title} className="rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-white/[0.02] p-6">
-              <div className="text-emerald-300 text-sm tracking-wide">{s.title}</div>
-              <div className="mt-1 text-white/80 text-sm">{s.subtitle}</div>
-              <p className="mt-3 text-white/70 text-sm">{s.desc}</p>
-              <p className="mt-3 text-white/60 text-xs">{s.value}</p>
-            </div>
+          {steps.map((s, i) => (
+            <Reveal key={s.title} delay={i * 0.05}>
+              <div className="rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-white/[0.02] p-6">
+                <div className="text-emerald-300 text-sm tracking-wide">{s.title}</div>
+                <div className="mt-1 text-white/80 text-sm">{s.subtitle}</div>
+                <p className="mt-3 text-white/70 text-sm">{s.desc}</p>
+                <p className="mt-3 text-white/60 text-xs">{s.value}</p>
+              </div>
+            </Reveal>
           ))}
         </div>
       </div>
