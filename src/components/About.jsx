@@ -4,31 +4,46 @@ export default function About() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-2 items-start">
           <div>
-            <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">About</h2>
+            <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">About Us</h2>
             <p className="mt-4 text-white/70">
-              TurnitAI partners with leaders who want to win the decade. We blend deep operating experience with modern AI to engineer systems that unlock human potential. Our bias is to ship, measure, and iterate.
+              Building systems that serve a human purpose. We ship, measure, and iterate—safely and pragmatically.
             </p>
-            <p className="mt-3 text-white/70">
-              We believe AI should serve human purpose. That means safe deployment, measurable outcomes, and teams equipped to sustain advantage.
-            </p>
+            <div className="mt-6 grid grid-cols-2 gap-4 text-sm">
+              <div className="rounded-xl border border-white/10 p-4">
+                <div className="text-white/60">Vision</div>
+                <div className="mt-1 text-white">Winning is engineered—through intelligent systems that amplify people.</div>
+              </div>
+              <div className="rounded-xl border border-white/10 p-4">
+                <div className="text-white/60">Mission</div>
+                <div className="mt-1 text-white">Productivity should serve a human purpose. It’s the only path worth taking.</div>
+              </div>
+              <div className="rounded-xl border border-white/10 p-4">
+                <div className="text-white/60">Values</div>
+                <div className="mt-1 text-white">Human‑Centered • Pragmatic • Secure by Design</div>
+              </div>
+              <div className="rounded-xl border border-white/10 p-4">
+                <div className="text-white/60">Focus</div>
+                <div className="mt-1 text-white">Outcome‑first, build‑with, enterprise‑ready.</div>
+              </div>
+            </div>
           </div>
           <div className="rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-white/[0.02] p-6">
             <dl className="grid grid-cols-2 gap-6">
               <div>
-                <dt className="text-sm text-white/60">Average time to first value</dt>
+                <dt className="text-sm text-white/60">Time to first value</dt>
                 <dd className="text-2xl font-semibold text-white">30 days</dd>
               </div>
               <div>
-                <dt className="text-sm text-white/60">Engagement focus</dt>
-                <dd className="text-2xl font-semibold text-white">Outcome-first</dd>
-              </div>
-              <div>
                 <dt className="text-sm text-white/60">Delivery model</dt>
-                <dd className="text-2xl font-semibold text-white">Build-with</dd>
+                <dd className="text-2xl font-semibold text-white">Build‑with</dd>
               </div>
               <div>
                 <dt className="text-sm text-white/60">Security posture</dt>
-                <dd className="text-2xl font-semibold text-white">Enterprise-ready</dd>
+                <dd className="text-2xl font-semibold text-white">Enterprise</dd>
+              </div>
+              <div>
+                <dt className="text-sm text-white/60">Engagement focus</dt>
+                <dd className="text-2xl font-semibold text-white">Outcomes</dd>
               </div>
             </dl>
           </div>
